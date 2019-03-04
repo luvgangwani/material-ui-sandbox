@@ -8,6 +8,9 @@ class Footer extends React.Component {
     }
 
     render(){
+
+        let muscles = this.props.muscles;
+        
         return(
             <Fragment>
                 <Paper>
@@ -16,9 +19,10 @@ class Footer extends React.Component {
                     indicatorColor="primary"
                     textColor="primary"
                     centered>
-                        <Tab label="Item One" />
-                        <Tab label="Item Two" />
-                        <Tab label="Item Three" />
+                        <Tab label="All" />
+                        {muscles.map((muscle, index) =>
+                            <Tab key={index} label={muscle} />    
+                        )}
                     </Tabs>
                 </Paper>
             </Fragment>
